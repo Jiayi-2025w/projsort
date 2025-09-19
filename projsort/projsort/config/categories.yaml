@@ -1,0 +1,61 @@
+categories:
+  PAPER:
+    target_dir: "paper"
+    exts: [".pdf"]
+  REFERENCE:
+    target_dir: "reference"
+    exts: [".bib", ".ris", ".enl", ".xml"]
+  CODE:
+    target_dir: "code"
+    exts: [".py", ".ipynb", ".cpp", ".c", ".h", ".hpp", ".cc", ".java", ".js", ".ts", ".sh", ".bat", ".ps1", ".rb", ".go", ".rs", ".m", ".mm"]
+  FIGURE:
+    target_dir: "figure"
+    exts: [".png", ".jpg", ".jpeg", ".svg", ".eps"]
+  DATA:
+    target_dir: "data"
+    exts: [".csv", ".tsv", ".xlsx", ".xls", ".json", ".parquet", ".npy", ".npz", ".mat"]
+  NOTE:
+    target_dir: "note"
+    exts: [".md", ".txt", ".rst"]
+  CONFIG:
+    target_dir: "config"
+    exts: [".yml", ".yaml", ".ini", ".cfg", ".toml"]
+  LOG:
+    target_dir: "log"
+    exts: [".log", ".out", ".err"]
+  OTHER:
+    target_dir: "other"
+    exts: []
+
+path_keywords:
+  PAPER: ["paper", "papers", "docs", "doc", "publication"]
+  REFERENCE: ["bib", "reference", "refs", "citations"]
+  CODE: ["src", "source", "code", "scripts", "notebooks"]
+  FIGURE: ["fig", "figs", "figure", "img", "image", "images", "plot", "chart"]
+  DATA: ["data", "dataset", "datasets", "csv", "table"]
+  NOTE: ["note", "notes", "memo"]
+  CONFIG: ["config", "conf", "cfg"]
+  LOG: ["log", "logs", "logging"]
+
+text_keywords:
+  PAPER: ["abstract", "introduction", "related work", "conclusion", "references", "doi", "arxiv"]
+  REFERENCE: ["@article", "@inproceedings", "\\bibliography", "bibtex", "reference manager"]
+  CODE: ["import ", "def ", "class ", "#include", "template<", "using namespace"]
+  FIGURE: ["figure", "Fig.", "plot", "epoch", "accuracy", "loss"]
+  DATA: ["columns", "rows", "schema", "field", "json", "csv", "table"]
+
+weights:
+  ext: 1.0
+  path: 0.6
+  text: 0.8
+  meta: 0.5
+  default_bias_other: -0.3
+
+thresholds:
+  accept: 0.45
+  maybe: 0.30
+
+organize:
+  mode_default: "copy"
+  dedup_by_hash: true
+  hash_algo: "md5"
